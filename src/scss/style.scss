@@ -36,6 +36,10 @@ body {
 	background-color: var(--bg-color);
 	color: var(--text-color);
 
+	position: relative;
+
+	display: grid;
+	grid-template-columns: 1fr 56px;
 	// Блокировка скролла
 	&._locked {
 		overflow: hidden;
@@ -119,6 +123,8 @@ body {
 .main {
 	flex: 1 1 auto;
 }
+
+@import 'components/aside';
 
 //===========================================//
 /*---Footer---*/

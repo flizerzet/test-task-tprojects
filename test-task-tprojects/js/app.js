@@ -42,10 +42,28 @@
             if (true === support) document.documentElement.classList.add("_webp"); else document.documentElement.classList.add("_no-webp");
         }));
     })();
+    const getDay = (lang = "eng", format = "full") => {
+        let day;
+        if ("full" === format) if ("rus" === lang) {
+            const days = [ "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" ];
+            day = days[(new Date).getDay() - 1];
+        } else {
+            const days = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ];
+            day = days[(new Date).getDay()];
+        } else if ("rus" === lang) {
+            const days = [ "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс" ];
+            day = days[(new Date).getDay() - 1];
+        } else {
+            const days = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ];
+            day = days[(new Date).getDay()];
+        }
+        return day;
+    };
     const headerMenu = document.querySelector(".menu");
     headerMenu.addEventListener("click", (e => {
         if (e.target.closest(".menu__item")) headerMenu.querySelectorAll("li").forEach((item => {
-            if (item.classList.contains("_active")) item.closest(".menu__item").classList.remove("_active"); else e.target.closest(".menu__item").classList.add("_active");
+            item.classList.remove("_active");
+            e.target.closest(".menu__item").classList.add("_active");
         }));
     }));
     const settingsBtn = document.querySelector(".settings__btn");
@@ -53,5 +71,19 @@
     settingsBtn.addEventListener("click", (() => {
         settingsBtn.classList.toggle("_active");
         settingsMenu.classList.toggle("_active");
+    }));
+    const dates = document.querySelectorAll(".date");
+    dates.forEach((date => {
+        const day = date.querySelector(".day");
+        const hour = date.querySelector(".hour");
+        const minute = date.querySelector(".minute");
+        day.textContent = getDay("rus", "short");
+        hour.textContent = (new Date).getHours() / 10 < 1 ? `0${(new Date).getHours()}` : (new Date).getHours();
+        minute.textContent = (new Date).getMinutes() / 10 < 1 ? `0${(new Date).getMinutes()}` : (new Date).getMinutes();
+    }));
+    const profileBtn = document.querySelector(".aside__avatar");
+    const profileMenu = document.querySelector(".profile-aside");
+    profileBtn.addEventListener("click", (() => {
+        profileMenu.classList.toggle("_active");
     }));
 })();

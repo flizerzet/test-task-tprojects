@@ -45,16 +45,29 @@ export const debounce = (fn, ms) => {
 
 //---День недели
 
-export const getDay = lang => {
+export const getDay = (lang = 'eng', format = 'full') => {
 	let day;
-	if (lang === 'rus') {
-		const days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
 
-		day = days[new Date().getDay() - 1]
+	if (format === 'full') {
+		if (lang === 'rus') {
+			const days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+	
+			day = days[new Date().getDay() - 1]
+		} else {
+			const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+	
+			day = days[new Date().getDay()]
+		}
 	} else {
-		const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
-		day = days[new Date().getDay()]
+		if (lang === 'rus') {
+			const days = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+	
+			day = days[new Date().getDay() - 1]
+		} else {
+			const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+	
+			day = days[new Date().getDay()]
+		}
 	}
 
 	return day;
