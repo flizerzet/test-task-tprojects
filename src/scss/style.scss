@@ -1,0 +1,128 @@
+@use "sass:math";
+
+//---МИКСИНЫ---//
+@import "components/mixins";
+
+/*---ШРИФТЫ---*/
+@import 'components/fonts';
+//&display=swap
+
+//---Иконочный шрифт---*/
+// @import 'components/icons';
+
+/*---ОБНУЛЕНИЕ---*/
+@import "components/nullstyle";
+
+//---SCSS ПЕРЕМЕННЫЕ---
+@import 'components/variables';
+
+/*---CSS ПЕРЕМЕННЫЕ---*/
+:root {
+	--bg-color: #EFF3F6;
+	--text-color: #354052;
+	--secondary-color: #0085F0;
+	--secondary-hover: #026ec7;
+}
+
+/*---ЦВЕТОВАЯ СХЕМА И СТРАНИЦА---*/
+// @import 'components/color-scheme';
+
+body {
+	font-family: $fontFamily, sans-serif;
+	font-weight: $fontWeight;
+
+	transition: background-color .2s, color .2s;
+
+	background-color: var(--bg-color);
+	color: var(--text-color);
+
+	// Блокировка скролла
+	&._locked {
+		overflow: hidden;
+		touch-action: none;
+	}
+}
+
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	// Для слайдеров
+	> * {
+		min-width: 0;
+	}
+}
+
+[class*="__container"] {
+	@if ($maxWidthContainer > 0) {
+		max-width: $containerWidth + px;
+	} @else {
+		width: 100%;
+	}
+	margin: 0 auto;
+	padding: 0 math.div($containerPadding, 2) + px;
+}
+
+//===========================================//
+//---Дополнительные стили
+
+/*---ОБЩИЕ КЛАССЫ---*/
+@import 'components/common';
+
+//===========================================//
+//---Элементы
+
+//---МОДАЛЬНЫЕ ОКНА
+// @import 'elements/modals';
+
+//---ТАБЫ
+// @import 'elements/tabs';
+
+//---SHOW MORE
+// @import 'elements/showmore';
+
+//---SPOLLERS
+// @import 'elements/spollers';
+
+//---SWIPER
+// @import 'elements/swiper';
+
+//---RANGE INPUT
+// @import 'elements/range';
+
+//---SELECTS
+// @import 'elements/selects';
+
+//---STAR RATING
+// @import 'elements/rating';
+
+//---COUNTER
+// @import 'elements/counter';
+
+//---SWITCHER
+// @import 'elements/switcher';
+
+//---Ticker
+// @import 'elements/ticker';
+
+//==========================================//
+/*---Header---*/
+
+@import "components/header";
+
+//===========================================//
+
+/*---Стили страницы---*/
+
+.main {
+	flex: 1 1 auto;
+}
+
+//===========================================//
+/*---Footer---*/
+
+@import "components/footer";
+
+//===========================================//

@@ -1,0 +1,238 @@
+// Styles for header
+
+.header {
+	background-color: #273142;
+	padding: 8px 0;
+	position: relative;
+	// .header__container
+	&__container {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+	}
+	// .header__logo
+	&__logo {
+	}
+	// .header__btn
+	&__btn {
+		background-color: var(--secondary-color);
+		transition: all 0.2s;
+		@include rect(40, 40, 1, 1);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		path {
+			stroke: #fff;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--secondary-hover);
+			}
+		}
+	}
+	// .header__menu
+	&__menu {
+	}
+
+	&__dots {
+		vertical-align: super;
+		padding: 10px;
+		border-radius: 3px;
+		transition: background-color .2s;
+		path {
+			stroke: #fff;
+			transition: stroke 0.2s;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #354052;
+				path {
+					stroke: var(--secondary-color);
+				}
+			}
+		}
+		&._active{
+			background-color: #354052;
+			path {
+				stroke: var(--secondary-color);
+			}
+		}
+	}
+	&__active-line {
+		height: 2px;
+		background-color: #354052;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		._line {
+			height: 100%;
+			background-color: var(--secondary-color);
+			width: 0;
+			position: absolute;
+			transition: all 0.2s;
+		}
+	}
+}
+.menu {
+	// .menu__body
+	&__body {
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+	// .menu__item
+	&__item {
+		color: #fff;
+		transition: color 0.2s;
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -20px;
+			z-index: 2;
+			left: 0;
+			right: 0;
+			height: 2px;
+			background-color: var(--secondary-color);
+			opacity: 0;
+			transition: opacity 0.2s;
+		}
+		&._active {
+			&:after {
+				opacity: 1;
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--secondary-color);
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	// .menu__link
+	&__link {
+	}
+}
+
+.settings {
+	position: relative;
+		// .settings__btn
+		&__btn {
+		}
+		// .settings__menu
+		&__menu {
+			position: absolute;
+			top: 120%;
+			right: 0;
+			padding: 8px 0 0;
+			background-color: #fff;
+			border: 1px solid #dfe3e9;
+			z-index: 5;
+			width: 200px;
+			display: flex;
+			flex-direction: column;
+			transition: all .2s;
+			opacity: 0;
+			visibility: hidden;
+			touch-action: none;
+			transform: translateY(-5px);
+			&._active{
+				opacity: 1;
+				visibility: visible;
+				touch-action: all;
+				transform: translateY(0);
+			}
+		}
+		// .settings__list
+		&__list {
+		}
+		// .settings__item
+		&__item {
+			transition: all .2s;
+			@media (any-hover: hover) {
+				&:hover{
+					background-color: #ECF6FF;
+					a {
+						color: var(--secondary-color);
+					}
+				}
+			}
+			a {
+				display: block;
+				padding: 10px 16px;
+			}
+		}
+		// .settings__extra
+		&__extra {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			padding: 10px 16px;
+			border-top: 1px solid #dfe3e9;
+			transition: background-color .2s;
+			path {
+				stroke: var(--text-color);
+			}
+			@media (any-hover: hover) {
+				&:hover{
+					background-color: #ECF6FF;
+					color: var(--secondary-color);
+					path {
+						stroke: var(--secondary-color)
+					}
+				}
+			}
+		}
+}
+
+
+//===========================================//
+
+// // .menu__icon
+// &__icon {
+// 	display: none;
+// 	@media (max-width: em(768)) {
+// 		display: block;
+// 		height: 18px;
+// 		width: 30px;
+// 		position: relative;
+// 		cursor: pointer;
+// 		z-index: 5;
+// 		span {
+// 			transition: all 0.3s ease 0s;
+// 			top: calc(50% - 1px);
+// 			left: 0;
+// 			position: absolute;
+// 			width: 100%;
+// 			height: 2px;
+// 			background-color: #000;
+// 			&:first-child {
+// 				top: 0;
+// 			}
+// 			&:last-child {
+// 				top: auto;
+// 				bottom: 0;
+// 			}
+// 		}
+// 		&._active {
+// 			span {
+// 				transform: scale(0);
+// 				&:first-child {
+// 					transform: rotate(-45deg);
+// 					top: calc(50% - 1px);
+// 				}
+// 				&:last-child {
+// 					transform: rotate(45deg);
+// 					bottom: calc(50% - 1px);
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+//===========================================//
