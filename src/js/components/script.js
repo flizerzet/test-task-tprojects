@@ -35,9 +35,9 @@ dates.forEach(date => {
 	const hour = date.querySelector('.hour')
 	const minute = date.querySelector('.minute')
 
-	day.textContent = getDay('rus', 'short')
-	hour.textContent = new Date().getHours() / 10 < 1 ? `0${new Date().getHours()}` : new Date().getHours()
-	minute.textContent = new Date().getMinutes() / 10 < 1 ? `0${new Date().getMinutes()}` : new Date().getMinutes()
+	if (day) {day.textContent = getDay("rus", "short")}
+	if (hour) {hour.textContent = new Date().getHours() / 10 < 1 ? `0${new Date().getHours()}`: new Date().getHours();}
+	if (minute) {minute.textContent = new Date().getMinutes() / 10 < 1 ? `0${new Date().getMinutes()}` : new Date().getMinutes();}
 })
 
 //#endregion
@@ -49,6 +49,29 @@ const profileMenu = document.querySelector('.profile-aside')
 
 profileBtn.addEventListener('click', () => {
 	profileMenu.classList.toggle('_active')
+})
+
+//#endregion
+
+//#region Tasks
+
+const tasksBtn = document.querySelector('[data-open="tasks"]')
+const tasksMenu = document.querySelector(".projects-aside");
+const asideBackdrop = document.querySelector(".aside__backdrop");
+const closeTasksBtn = document.querySelector(".projects-aside__close");
+
+const closeTasks = () => {
+	asideBackdrop.classList.remove("_active");
+	tasksMenu.classList.remove("_active");
+}
+
+closeTasksBtn.addEventListener('click', closeTasks)
+
+asideBackdrop.addEventListener('click', closeTasks)
+
+tasksBtn.addEventListener('click', () => {
+	tasksMenu.classList.toggle('_active')
+	asideBackdrop.classList.toggle("_active");
 })
 
 //#endregion

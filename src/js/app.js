@@ -41,7 +41,7 @@ import * as modules from './components/modules.js'
 /*===========================================*/
 //---Tabs
 
-// modules.tabsInit();
+modules.tabsInit();
 
 /*===========================================*/
 //---Dynamic adaptive

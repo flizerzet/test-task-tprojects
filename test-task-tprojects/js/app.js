@@ -42,6 +42,27 @@
             if (true === support) document.documentElement.classList.add("_webp"); else document.documentElement.classList.add("_no-webp");
         }));
     })();
+    function tabsInit() {
+        let tabs = document.querySelectorAll("._tabs");
+        for (let index = 0; index < tabs.length; index++) {
+            let tab = tabs[index];
+            let tabs_items = tab.querySelectorAll("._tabs-link");
+            let tabs_blocks = tab.querySelectorAll("._tabs-content");
+            for (let index = 0; index < tabs_items.length; index++) {
+                let tabs_item = tabs_items[index];
+                tabs_item.addEventListener("click", (function(e) {
+                    for (let index = 0; index < tabs_items.length; index++) {
+                        let tabs_item = tabs_items[index];
+                        tabs_item.classList.remove("_active");
+                        tabs_blocks[index].classList.remove("_active");
+                    }
+                    tabs_item.classList.add("_active");
+                    tabs_blocks[index].classList.add("_active");
+                    e.preventDefault();
+                }));
+            }
+        }
+    }
     const getDay = (lang = "eng", format = "full") => {
         let day;
         if ("full" === format) if ("rus" === lang) {
@@ -77,13 +98,28 @@
         const day = date.querySelector(".day");
         const hour = date.querySelector(".hour");
         const minute = date.querySelector(".minute");
-        day.textContent = getDay("rus", "short");
-        hour.textContent = (new Date).getHours() / 10 < 1 ? `0${(new Date).getHours()}` : (new Date).getHours();
-        minute.textContent = (new Date).getMinutes() / 10 < 1 ? `0${(new Date).getMinutes()}` : (new Date).getMinutes();
+        if (day) day.textContent = getDay("rus", "short");
+        if (hour) hour.textContent = (new Date).getHours() / 10 < 1 ? `0${(new Date).getHours()}` : (new Date).getHours();
+        if (minute) minute.textContent = (new Date).getMinutes() / 10 < 1 ? `0${(new Date).getMinutes()}` : (new Date).getMinutes();
     }));
     const profileBtn = document.querySelector(".aside__avatar");
     const profileMenu = document.querySelector(".profile-aside");
     profileBtn.addEventListener("click", (() => {
         profileMenu.classList.toggle("_active");
     }));
+    const tasksBtn = document.querySelector('[data-open="tasks"]');
+    const tasksMenu = document.querySelector(".projects-aside");
+    const asideBackdrop = document.querySelector(".aside__backdrop");
+    const closeTasksBtn = document.querySelector(".projects-aside__close");
+    const closeTasks = () => {
+        asideBackdrop.classList.remove("_active");
+        tasksMenu.classList.remove("_active");
+    };
+    closeTasksBtn.addEventListener("click", closeTasks);
+    asideBackdrop.addEventListener("click", closeTasks);
+    tasksBtn.addEventListener("click", (() => {
+        tasksMenu.classList.toggle("_active");
+        asideBackdrop.classList.toggle("_active");
+    }));
+    tabsInit();
 })();
