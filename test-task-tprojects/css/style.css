@@ -396,8 +396,18 @@ body._locked {
   transition: all 0.2s;
 }
 
+.settings__item path {
+  stroke: var(--text-color);
+}
+
 .settings__item a {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
   padding: 10px 16px;
 }
 
@@ -418,6 +428,181 @@ body._locked {
 
 .settings__extra path {
   stroke: var(--text-color);
+}
+
+.submenu {
+  padding: 20px 0;
+  position: relative;
+  background-color: #fff;
+  border-bottom: 1px solid #dfe3e9;
+}
+
+.submenu__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.submenu__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.submenu__item {
+  padding: 0 16px;
+  position: relative;
+}
+
+.submenu__item:first-child {
+  padding: 0 16px 0 0;
+}
+
+.submenu__item:not(:last-child):after {
+  content: "";
+  width: 1px;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #dfe3e9;
+}
+
+.submenu__title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.submenu__weather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+}
+
+.submenu__settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 18px;
+}
+
+.submenu .settings__btn path {
+  stroke: var(--text-color);
+}
+
+.submenu .settings__btn._active {
+  background-color: #dfe3e9;
+}
+
+.submenu__faq {
+  cursor: pointer;
+}
+
+.submenu__faq path {
+  fill: var(--text-color);
+  -webkit-transition: fill 0.2s;
+  -o-transition: fill 0.2s;
+  transition: fill 0.2s;
+}
+
+.submenu__add .settings__btn {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 12px;
+  background-color: var(--secondary-color);
+  border-radius: 4px;
+  -webkit-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.submenu__add .settings__btn._active {
+  background-color: var(--secondary-hover);
+}
+
+.submenu__tabs {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.submenu__tabs._active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.submenu__tabs-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  padding: 10px 16px;
+}
+
+.submenu__tabs-item {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #516173;
+  padding: 11px;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submenu__tabs-item._active {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.submenu__lock {
+  background: url("../img/icons/btn_lock.svg") center center no-repeat;
+  width: 40px;
+  height: 40px;
 }
 
 /*---Стили страницы---*/
@@ -1011,20 +1196,41 @@ body._locked {
   }
 
   .settings__item:hover {
-    background-color: #ECF6FF;
+    background-color: #ecf6ff;
   }
 
   .settings__item:hover a {
     color: var(--secondary-color);
   }
 
+  .settings__item:hover path {
+    stroke: var(--secondary-color);
+  }
+
   .settings__extra:hover {
-    background-color: #ECF6FF;
+    background-color: #ecf6ff;
     color: var(--secondary-color);
   }
 
   .settings__extra:hover path {
     stroke: var(--secondary-color);
+  }
+
+  .submenu .settings__btn:hover {
+    background-color: #dfe3e9;
+  }
+
+  .submenu__faq:hover path {
+    fill: var(--secondary-color);
+  }
+
+  .submenu__add .settings__btn:hover {
+    background-color: var(--secondary-hover);
+  }
+
+  .submenu__tabs-item:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
   }
 
   .menu-aside__item button:hover path {

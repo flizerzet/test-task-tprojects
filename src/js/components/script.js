@@ -16,12 +16,14 @@ headerMenu.addEventListener('click', e => {
 
 //#region Settings
 
-const settingsBtn = document.querySelector('.settings__btn')
-const settingsMenu = document.querySelector('.settings__menu')
+const settingsBtn = document.querySelectorAll('.settings__btn')
 
-settingsBtn.addEventListener('click', () => {
-	settingsBtn.classList.toggle('_active')
-	settingsMenu.classList.toggle('_active')
+settingsBtn.forEach(btn => {
+	btn.addEventListener('click', (event) => {
+		let openId = event.target.closest(".settings__btn").dataset.open;
+		btn.classList.toggle("_active");
+		document.querySelector(`[data-settings="${openId}"]`).classList.toggle('_active');
+	})
 })
 
 //#endregion
@@ -74,4 +76,23 @@ tasksBtn.addEventListener('click', () => {
 	asideBackdrop.classList.toggle("_active");
 })
 
+//#endregion
+
+//#region Subheader
+const subheaderMenu = document.querySelector(".submenu__tabs");
+const subheaderBtn = document.querySelector(".submenu__title");
+
+subheaderBtn.addEventListener('click', () => {
+	subheaderMenu.classList.toggle('_active')
+})
+
+subheaderMenu.addEventListener("click", (e) => {
+  if (e.target.closest(".submenu__tabs-item")) {
+    subheaderMenu.querySelectorAll("li").forEach((item) => {
+      item.classList.remove("_active");
+      e.target.closest(".submenu__tabs-item").classList.add("_active");
+			subheaderBtn.textContent = e.target.closest(".submenu__tabs-item").textContent
+    });
+  }
+});
 //#endregion

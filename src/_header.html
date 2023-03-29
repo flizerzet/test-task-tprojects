@@ -23,14 +23,14 @@
 			</nav>
 		</div>
 		<div class="header__settings settings">
-			<button class="header__dots settings__btn">
+			<button class="header__dots settings__btn" data-open="1">
 				<svg width="18" height="12" viewBox="0 0 18 5" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M9 3.0015C9.55228 3.0015 10 2.55378 10 2.0015C10 1.44921 9.55228 1.0015 9 1.0015C8.44772 1.0015 8 1.44921 8 2.0015C8 2.55378 8.44772 3.0015 9 3.0015Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 					<path d="M16 3.0015C16.5523 3.0015 17 2.55378 17 2.0015C17 1.44921 16.5523 1.0015 16 1.0015C15.4477 1.0015 15 1.44921 15 2.0015C15 2.55378 15.4477 3.0015 16 3.0015Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 					<path d="M2 3.0015C2.55228 3.0015 3 2.55378 3 2.0015C3 1.44921 2.55228 1.0015 2 1.0015C1.44772 1.0015 1 1.44921 1 2.0015C1 2.55378 1.44772 3.0015 2 3.0015Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 				</svg>
 			</button>
-			<div class="settings__menu">
+			<div class="settings__menu" data-settings="1">
 				<ul class="settings__list">
 					<li class="settings__item"><a href="#">Календарь</a></li>
 					<li class="settings__item"><a href="#">Услуги</a></li>
@@ -52,3 +52,96 @@
 	<div class="header__active-line">
 	</div>
 </header>
+<div class="submenu">
+	<div class='submenu__container'>
+		<div class="submenu__info">
+			<div class="submenu__item submenu__title">Работа с задачами</div>
+			<div class="submenu__item submenu__date date">
+				<span class="day"></span>
+				<span class="hour"></span>:<span class="minute"></span>
+			</div>
+			<div class="submenu__item submenu__weather">
+				<img src="img/icons/rain.svg" alt="">
+				<span>-8°</span>
+			</div>
+		</div>
+		<div class="submenu__settings">
+			<div class="submenu__menu">
+				<div class="submenu__btn settings">
+					<button class="header__dots settings__btn" data-open="2">
+						<svg width="18" height="12" viewBox="0 0 18 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M9 3.0015C9.55228 3.0015 10 2.55378 10 2.0015C10 1.44921 9.55228 1.0015 9 1.0015C8.44772 1.0015 8 1.44921 8 2.0015C8 2.55378 8.44772 3.0015 9 3.0015Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M16 3.0015C16.5523 3.0015 17 2.55378 17 2.0015C17 1.44921 16.5523 1.0015 16 1.0015C15.4477 1.0015 15 1.44921 15 2.0015C15 2.55378 15.4477 3.0015 16 3.0015Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M2 3.0015C2.55228 3.0015 3 2.55378 3 2.0015C3 1.44921 2.55228 1.0015 2 1.0015C1.44772 1.0015 1 1.44921 1 2.0015C1 2.55378 1.44772 3.0015 2 3.0015Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</button>
+					<div class="settings__menu" data-settings="2">
+						<ul class="settings__list">
+							<li class="settings__item">
+								<a href="#">
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M8.00004 14.6666C11.6819 14.6666 14.6667 11.6819 14.6667 7.99998C14.6667 4.31808 11.6819 1.33331 8.00004 1.33331C4.31814 1.33331 1.33337 4.31808 1.33337 7.99998C1.33337 11.6819 4.31814 14.6666 8.00004 14.6666Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										<path d="M8 5.33331V10.6666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										<path d="M5.33337 8H10.6667" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+									Создать
+								</a>
+							</li>
+							<li class="settings__item">
+								<a href="#">
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M8 13.3333H14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										<path d="M11 2.33334C11.2652 2.06813 11.6249 1.91913 12 1.91913C12.1857 1.91913 12.3696 1.95571 12.5412 2.02678C12.7128 2.09785 12.8687 2.20202 13 2.33334C13.1313 2.46466 13.2355 2.62057 13.3066 2.79215C13.3776 2.96373 13.4142 3.14762 13.4142 3.33334C13.4142 3.51906 13.3776 3.70296 13.3066 3.87454C13.2355 4.04612 13.1313 4.20202 13 4.33334L4.66667 12.6667L2 13.3333L2.66667 10.6667L11 2.33334Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+									Редактировать
+								</a>
+							</li>
+							<li class="settings__item">
+								<a href="#">
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M2 4H14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										<path d="M5.33331 4.00001V2.66668C5.33331 2.31305 5.47379 1.97392 5.72384 1.72387C5.97389 1.47382 6.31302 1.33334 6.66665 1.33334H9.33331C9.68694 1.33334 10.0261 1.47382 10.2761 1.72387C10.5262 1.97392 10.6666 2.31305 10.6666 2.66668V4.00001M12.6666 4.00001V13.3333C12.6666 13.687 12.5262 14.0261 12.2761 14.2762C12.0261 14.5262 11.6869 14.6667 11.3333 14.6667H4.66665C4.31302 14.6667 3.97389 14.5262 3.72384 14.2762C3.47379 14.0261 3.33331 13.687 3.33331 13.3333V4.00001H12.6666Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+									Удалить
+								</a>
+							</li>
+						</ul>
+						<button class="settings__extra">
+							<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M8.33337 10.334C9.43794 10.334 10.3334 9.43858 10.3334 8.33401C10.3334 7.22945 9.43794 6.33401 8.33337 6.33401C7.2288 6.33401 6.33337 7.22945 6.33337 8.33401C6.33337 9.43858 7.2288 10.334 8.33337 10.334Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M7.01474 2.05581C7.33021 0.648063 9.33646 0.648065 9.65193 2.05581L9.68192 2.18967C9.88645 3.10234 10.934 3.53625 11.724 3.03551L11.8398 2.96206C13.0583 2.18971 14.477 3.60834 13.7046 4.82683L13.6312 4.94271C13.1304 5.73268 13.5643 6.78022 14.477 6.98474L14.6109 7.01474C16.0186 7.33021 16.0186 9.33646 14.6109 9.65193L14.477 9.68192C13.5643 9.88645 13.1304 10.934 13.6312 11.724L13.7046 11.8398C14.477 13.0583 13.0583 14.477 11.8398 13.7046L11.724 13.6312C10.934 13.1304 9.88645 13.5643 9.68192 14.477L9.65193 14.6109C9.33646 16.0186 7.33021 16.0186 7.01474 14.6109L6.98474 14.477C6.78022 13.5643 5.73268 13.1304 4.94271 13.6312L4.82683 13.7046C3.60834 14.477 2.18971 13.0583 2.96206 11.8398L3.03551 11.724C3.53625 10.934 3.10234 9.88645 2.18967 9.68192L2.05581 9.65192C0.648063 9.33646 0.648065 7.33021 2.05581 7.01474L2.18967 6.98474C3.10234 6.78022 3.53625 5.73268 3.03551 4.94271L2.96206 4.82683C2.18971 3.60834 3.60834 2.18971 4.82684 2.96206L4.94271 3.03551C5.73268 3.53625 6.78022 3.10234 6.98474 2.18967L7.01474 2.05581Z" stroke-width="2" />
+							</svg>
+							Настроить
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="submenu__faq">
+				<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M20 9.99902C14.4772 9.99902 10 14.4762 10 19.999C10 25.5219 14.4772 29.999 20 29.999C25.5228 29.999 30 25.5219 30 19.999C30 14.4762 25.5228 9.99902 20 9.99902ZM8 19.999C8 13.3716 13.3726 7.99902 20 7.99902C26.6274 7.99902 32 13.3716 32 19.999C32 26.6264 26.6274 31.999 20 31.999C13.3726 31.999 8 26.6264 8 19.999ZM20.4072 15.0426C18.8545 14.7714 17.4443 15.6198 16.9402 17.0113C16.7521 17.5305 16.1786 17.799 15.6594 17.6108C15.1401 17.4227 14.8717 16.8493 15.0598 16.33C15.8962 14.0214 18.2476 12.6351 20.7514 13.0725C21.9024 13.2735 22.9799 13.7393 23.7729 14.5862C24.5789 15.447 25 16.6044 25 18.003C25 19.8802 23.5668 21.1401 22.4851 21.8402C21.9101 22.2124 21.3425 22.4872 20.9228 22.6683C20.7115 22.7595 20.5341 22.8285 20.4072 22.8754C20.3436 22.8989 20.2925 22.917 20.2559 22.9296L20.212 22.9446L20.1987 22.949L20.1942 22.9505L20.1926 22.951L20.1919 22.9512C20.1916 22.9513 20.1913 22.9514 19.8962 22.0396L20.1913 22.9514C19.6658 23.1215 19.102 22.8334 18.9319 22.3079C18.762 21.7829 19.0495 21.2196 19.5741 21.049L19.5749 21.0487L19.5783 21.0476L19.6033 21.0391C19.627 21.031 19.6643 21.0178 19.7133 20.9996C19.8116 20.9633 19.9557 20.9074 20.1304 20.832C20.4825 20.6801 20.9441 20.4553 21.3983 20.1613C22.3749 19.5291 23 18.7905 23 18.003C23 17.0226 22.7152 16.3828 22.313 15.9532C21.8979 15.51 21.2651 15.1925 20.4072 15.0426ZM20 25C19.4477 25 19 25.4477 19 26C19 26.5523 19.4477 27 20 27H20.01C20.5623 27 21.01 26.5523 21.01 26C21.01 25.4477 20.5623 25 20.01 25H20Z" />
+				</svg>
+			</div>
+			<div class="submenu__add settings">
+				<button class="settings__btn" data-open="3">Добавить</button>
+				<div class="settings__menu" data-settings="3">
+					<ul class="settings__list">
+						<li class="settings__item"><a href="#">Доска</a></li>
+						<li class="settings__item"><a href="#">Отчет</a></li>
+						<li class="settings__item"><a href="#">Разделы</a></li>
+						<li class="settings__item"><a href="#">Задачи</a></li>
+						<li class="settings__item"><a href="#">Карта</a></li>
+						<li class="settings__item"><a href="#">История</a></li>
+						<li class="settings__item"><a href="#">Сценарии</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="submenu__tabs">
+			<ul class="submenu__tabs-list">
+				<li class="submenu__tabs-item _active">работа с задачами</li>
+				<li class="submenu__tabs-item">Счета и платежи</li>
+				<li class="submenu__tabs-item">Показатели продаж</li>
+			</ul>
+			<button class="submenu__lock"></button>
+		</div>
+	</div>
