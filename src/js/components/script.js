@@ -1,7 +1,6 @@
 import { throttle, debounce, getDay, getMonth, getRandom } from "./functions.js";
 import { Modal } from "./modules.js";
 import Chart from "chart.js/auto"
-import { FunnelChart } from "chartjs-chart-funnel";
 
 
 //#region Menu
@@ -155,30 +154,6 @@ new Chart(ctx, {
 			},
 		},
 	},
-});
-
-//#endregion
-
-//#region Funnel chart
-
-var myFunnelChart = new FunnelChart(document.querySelector('#funnel'), {
-	type: 'funnel',
-	data: {
-		labels: ['Взяли в работу: 2', 'Новый лид: 1', 'Квалифицирован: 1', 'Предоплата получена: 1', 'Бриф согласован: 1', 'Договор/счет выставлен: 1', 'Бриф отправлен: 0'],
-		datasets: [{
-			label: 'Количество: ',
-			data: [2, 1, 1, 1, 1, 1, 0],
-			backgroundColor: [
-				'#FF6384',
-				'#36A2EB',
-				'#FFCE56',
-				'#4BC0C0'
-			],
-		}]
-	},
-	options: {
-		maintainAspectRatio: false,
-	}
 });
 
 //#endregion

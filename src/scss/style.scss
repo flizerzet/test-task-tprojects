@@ -50,7 +50,7 @@ body {
 .wrapper {
 	width: 100%;
 	min-height: 100%;
-	overflow: hidden;
+	overflow: auto;
 	display: flex;
 	flex-direction: column;
 	// Для слайдеров
@@ -122,6 +122,8 @@ body {
 
 .main {
 	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
 }
 
 @import "components/aside";
@@ -129,6 +131,7 @@ body {
 .main-section {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	align-items: normal;
 	gap: 16px;
 	padding: 16px;
 }
@@ -143,6 +146,11 @@ body {
 	background-color: #fff;
 	display: flex;
 	flex-direction: column;
+	min-height: 533px;
+	&:empty {
+		border: 2px dashed #c2cad4;
+		background-color: transparent;
+	}
 	&._blue {
 		border-top: 2px solid #3a9eff;
 	}
@@ -233,6 +241,9 @@ body {
 	// .item-dashboard__body
 	&__body {
 		flex: 1 1 auto;
+		img {
+			height: 100%;
+		}
 	}
 	// .item-dashboard__footer
 	&__footer {
