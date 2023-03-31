@@ -1,1 +1,15 @@
 // Styles for footer
+
+footer {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: #E9EDF1;
+	text-align: right;
+	padding: 6px 56px 6px 0;
+	span {
+		font-size: 13px;
+		color: #7F8FA4;
+	}
+}

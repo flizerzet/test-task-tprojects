@@ -157,3 +157,14 @@ new Chart(ctx, {
 });
 
 //#endregion
+
+//#region UserHelp
+
+const userHelpBtn = document.querySelector('.aside__help')
+const userHelpMenu = document.querySelector('.user-help')
+const closeUserHelpMenu = document.querySelector('.user-help__close')
+
+closeUserHelpMenu.addEventListener('click', () => { userHelpMenu.classList.remove('_active') })
+userHelpBtn.addEventListener('click', () => {
+	userHelpMenu.classList.toggle('_active')
+})

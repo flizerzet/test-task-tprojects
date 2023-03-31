@@ -53,6 +53,7 @@ body {
 	overflow: auto;
 	display: flex;
 	flex-direction: column;
+	padding-bottom: 28px;
 	// Для слайдеров
 	> * {
 		min-width: 0;

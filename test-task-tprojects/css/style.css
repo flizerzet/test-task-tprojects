@@ -193,6 +193,7 @@ body._locked {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-bottom: 28px;
 }
 
 .wrapper > * {
@@ -378,6 +379,8 @@ body._locked {
   -webkit-transform: translateY(-5px);
       -ms-transform: translateY(-5px);
           transform: translateY(-5px);
+  -webkit-box-shadow: 0px 7px 10px rgba(27, 36, 49, 0.15), 0px 3px 13px rgba(27, 36, 49, 0.05);
+          box-shadow: 0px 7px 10px rgba(27, 36, 49, 0.15), 0px 3px 13px rgba(27, 36, 49, 0.05);
 }
 
 .settings__menu._active {
@@ -431,7 +434,7 @@ body._locked {
 }
 
 .submenu {
-  padding: 20px 0;
+  padding: 8px 0;
   position: relative;
   background-color: #fff;
   border-bottom: 1px solid #dfe3e9;
@@ -628,6 +631,17 @@ body._locked {
   background-color: #273142;
   width: 56px;
   z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 14px;
 }
 
 .aside__avatar {
@@ -653,6 +667,24 @@ body._locked {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
+}
+
+.aside__help {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.aside__help button {
+  width: 36px;
+  height: 36px;
+  background: url("../img/button.svg") center center/cover no-repeat;
 }
 
 .menu-aside__list {
@@ -734,6 +766,8 @@ body._locked {
   -webkit-transition: opacity 0.2s;
   -o-transition: opacity 0.2s;
   transition: opacity 0.2s;
+  -webkit-box-shadow: 0px 7px 10px rgba(27, 36, 49, 0.15), 0px 3px 13px rgba(27, 36, 49, 0.05);
+          box-shadow: 0px 7px 10px rgba(27, 36, 49, 0.15), 0px 3px 13px rgba(27, 36, 49, 0.05);
 }
 
 .profile-aside._active {
@@ -934,27 +968,27 @@ body._locked {
 
 .projects-aside__search input::-webkit-input-placeholder {
   font-size: 14px;
-  color: #7F8FA4;
+  color: #7f8fa4;
 }
 
 .projects-aside__search input::-moz-placeholder {
   font-size: 14px;
-  color: #7F8FA4;
+  color: #7f8fa4;
 }
 
 .projects-aside__search input:-ms-input-placeholder {
   font-size: 14px;
-  color: #7F8FA4;
+  color: #7f8fa4;
 }
 
 .projects-aside__search input::-ms-input-placeholder {
   font-size: 14px;
-  color: #7F8FA4;
+  color: #7f8fa4;
 }
 
 .projects-aside__search input::placeholder {
   font-size: 14px;
-  color: #7F8FA4;
+  color: #7f8fa4;
 }
 
 .projects-aside__search input:focus::-webkit-input-placeholder {
@@ -1162,6 +1196,122 @@ body._locked {
 .project-aside__deadline {
   font-size: 12px;
   color: #ff3031;
+}
+
+.user-help {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  right: 100%;
+  width: 320px;
+  background-color: #fff;
+  -webkit-filter: drop-shadow(0px 28px 40px rgba(27, 36, 49, 0.15)) drop-shadow(0px 11px 53px rgba(27, 36, 49, 0.05));
+          filter: drop-shadow(0px 28px 40px rgba(27, 36, 49, 0.15)) drop-shadow(0px 11px 53px rgba(27, 36, 49, 0.05));
+  border-radius: 16px;
+  -webkit-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.user-help._active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.user-help__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 16px;
+  background-color: #eff3f6;
+}
+
+.user-help__name {
+  font-size: 18px;
+  color: #273142;
+}
+
+.user-help__close {
+  width: 20px;
+  height: 20px;
+  background: url("../img/icons/close.svg") center center no-repeat;
+  cursor: pointer;
+}
+
+.user-help__section {
+  padding: 16px;
+}
+
+.user-help__section:not(:last-child) {
+  border-bottom: 1px solid #dfe3e9;
+}
+
+.user-help__title {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #7f8fa4;
+  margin-bottom: 16px;
+}
+
+.user-help__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+
+.user-help__item {
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.user-help__item .stroke path {
+  stroke: var(--text-color);
+  fill: none;
+}
+
+.user-help__item path {
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  fill: var(--text-color);
+}
+
+.user-help__socials {
+  padding: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  border-top: 2px solid #dfe3e9;
 }
 
 .main-section {
@@ -1544,6 +1694,21 @@ body._locked {
 
 /*---Footer---*/
 
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #E9EDF1;
+  text-align: right;
+  padding: 6px 56px 6px 0;
+}
+
+footer span {
+  font-size: 13px;
+  color: #7F8FA4;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1637,6 +1802,19 @@ body._locked {
 
   .timer-aside__btn:hover {
     background-color: var(--secondary-hover);
+  }
+
+  .user-help__item:hover {
+    color: var(--secondary-color);
+  }
+
+  .user-help__item:hover path {
+    fill: var(--secondary-color);
+  }
+
+  .user-help__item:hover .stroke path {
+    stroke: var(--secondary-color);
+    fill: none;
   }
 
   .item-dashboard__dots:hover {
