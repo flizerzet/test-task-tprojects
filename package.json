@@ -44,6 +44,8 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"@cubejs-client/core": "^0.32.12",
+		"chartjs-chart-funnel": "^4.0.0-alpha.0",
 		"smoothscroll-polyfill": "^0.4.4"
 	}
 }

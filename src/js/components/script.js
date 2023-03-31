@@ -1,5 +1,8 @@
 import { throttle, debounce, getDay, getMonth, getRandom } from "./functions.js";
 import { Modal } from "./modules.js";
+import Chart from "chart.js/auto"
+import { FunnelChart } from "chartjs-chart-funnel";
+
 
 //#region Menu
 const headerMenu = document.querySelector('.menu')
@@ -37,9 +40,9 @@ dates.forEach(date => {
 	const hour = date.querySelector('.hour')
 	const minute = date.querySelector('.minute')
 
-	if (day) {day.textContent = getDay("rus", "short")}
-	if (hour) {hour.textContent = new Date().getHours() / 10 < 1 ? `0${new Date().getHours()}`: new Date().getHours();}
-	if (minute) {minute.textContent = new Date().getMinutes() / 10 < 1 ? `0${new Date().getMinutes()}` : new Date().getMinutes();}
+	if (day) { day.textContent = getDay("rus", "short") }
+	if (hour) { hour.textContent = new Date().getHours() / 10 < 1 ? `0${new Date().getHours()}` : new Date().getHours(); }
+	if (minute) { minute.textContent = new Date().getMinutes() / 10 < 1 ? `0${new Date().getMinutes()}` : new Date().getMinutes(); }
 })
 
 //#endregion
@@ -87,12 +90,95 @@ subheaderBtn.addEventListener('click', () => {
 })
 
 subheaderMenu.addEventListener("click", (e) => {
-  if (e.target.closest(".submenu__tabs-item")) {
-    subheaderMenu.querySelectorAll("li").forEach((item) => {
-      item.classList.remove("_active");
-      e.target.closest(".submenu__tabs-item").classList.add("_active");
+	if (e.target.closest(".submenu__tabs-item")) {
+		subheaderMenu.querySelectorAll("li").forEach((item) => {
+			item.classList.remove("_active");
+			e.target.closest(".submenu__tabs-item").classList.add("_active");
 			subheaderBtn.textContent = e.target.closest(".submenu__tabs-item").textContent
-    });
-  }
+		});
+	}
 });
+//#endregion
+
+//#region Tasks Chart
+
+const tasksChart = document.querySelector('.tasks-chart .legend')
+const ctx = document.getElementById("tasksChart");
+
+const tasksChartData = {
+	"Ангелина Сейт": [20, "#673AB7"],
+	"Александра": [55, "#3A9EFF"],
+	"Владимир": [5, "#00BCD4"],
+	"Тимур": [10, "#FFB300"],
+	"Денис": [10, "#10AB4F"],
+};
+
+const users = Object.entries(tasksChartData).map(user => {
+	return `
+		<div class="legend__label">
+			<div class="legend__icon" style="background-color: ${user[1][1]}"></div>
+			<div class="legend__title">${user[0]} (${user[1][0]}%)</div>
+		</div>
+`;
+})
+
+let ctxData = []
+Object.values(tasksChartData).forEach(elem => ctxData.push(elem[0]))
+console.log(ctxData);
+
+tasksChart.innerHTML += users.join('')
+
+new Chart(ctx, {
+	type: "doughnut",
+	data: {
+		labels: ["Ангелина Сейт", "Александа", "Владимир", "Тимур", "Денис"],
+		datasets: [
+			{
+				label: "Количество задач (%)",
+				data: ctxData,
+				borderWidth: 2,
+				backgroundColor: [
+					"#673AB7",
+					"#3A9EFF",
+					"#00BCD4",
+					"#FFB300",
+					"#10AB4F",
+				],
+			},
+		],
+	},
+	options: {
+		responsive: false,
+		plugins: {
+			legend: {
+				display: false,
+			},
+		},
+	},
+});
+
+//#endregion
+
+//#region Funnel chart
+
+var myFunnelChart = new FunnelChart(document.querySelector('#funnel'), {
+	type: 'funnel',
+	data: {
+		labels: ['Взяли в работу: 2', 'Новый лид: 1', 'Квалифицирован: 1', 'Предоплата получена: 1', 'Бриф согласован: 1', 'Договор/счет выставлен: 1', 'Бриф отправлен: 0'],
+		datasets: [{
+			label: 'Количество: ',
+			data: [2, 1, 1, 1, 1, 1, 0],
+			backgroundColor: [
+				'#FF6384',
+				'#36A2EB',
+				'#FFCE56',
+				'#4BC0C0'
+			],
+		}]
+	},
+	options: {
+		maintainAspectRatio: false,
+	}
+});
+
 //#endregion
