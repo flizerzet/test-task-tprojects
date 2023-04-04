@@ -366,63 +366,6 @@ body {
 	&__contact {
 	}
 }
-.contact {
-	display: flex;
-	align-items: center;
-	padding: 8px 16px;
-	border: 1px solid #dfe3e9;
-	// .contact__info
-	&__info {
-		flex: 1 1 auto;
-	}
-	// .contact__name
-	&__name {
-		margin-bottom: 3px;
-		font-size: 14px;
-		font-weight: 500;
-	}
-	// .contact__desc
-	&__desc {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		a {
-			display: flex;
-			align-items: center;
-			gap: 8px;
-			font-size: 12px;
-			color: #7f8fa4;
-			&:before {
-				content: "";
-				display: block;
-				width: 12px;
-				height: 12px;
-			}
-		}
-	}
-	// .contact__phone
-	&__phone {
-		&:before {
-			background: url("../img/icons/phone.svg") center center no-repeat;
-		}
-	}
-	// .contact__mail
-	&__mail {
-		&:before {
-			background: url("../img/icons/mail.svg") center center no-repeat;
-		}
-	}
-
-	&__img {
-		width: 32px;
-		height: 32px;
-		background: linear-gradient(0deg, #3a9eff -251.25%, #ecf6ff 50%);
-		border-radius: 100px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-}
 
 .tasks-chart {
 	canvas {

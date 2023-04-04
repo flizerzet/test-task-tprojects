@@ -10,22 +10,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: golos;
-  font-display: swap;
-  src: url("../fonts/golos-ui_regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: golos;
-  font-display: swap;
-  src: url("../fonts/golos-ui_medium.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
 /*---ОБНУЛЕНИЕ---*/
 
 * {
@@ -212,6 +196,84 @@ body._locked {
   color: var(--secondary-color);
 }
 
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 16px;
+  border: 1px solid #dfe3e9;
+}
+
+.contact__info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.contact__name {
+  margin-bottom: 3px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.contact__desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+}
+
+.contact__desc a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #7f8fa4;
+}
+
+.contact__desc a:before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+
+.contact__phone:before {
+  background: url("../img/icons/phone.svg") center center no-repeat;
+}
+
+.contact__mail:before {
+  background: url("../img/icons/mail.svg") center center no-repeat;
+}
+
+.contact__img {
+  width: 32px;
+  height: 32px;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(-251.25%, #3a9eff), color-stop(50%, #ecf6ff));
+  background: -o-linear-gradient(bottom, #3a9eff -251.25%, #ecf6ff 50%);
+  background: linear-gradient(0deg, #3a9eff -251.25%, #ecf6ff 50%);
+  border-radius: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 /*---Табы---*/
 
 ._tabs-link {
@@ -230,7 +292,6 @@ body._locked {
 
 .header {
   background-color: #273142;
-  padding: 8px 0;
   position: relative;
 }
 
@@ -333,7 +394,7 @@ body._locked {
 .menu__item::after {
   content: "";
   position: absolute;
-  bottom: -20px;
+  bottom: 0;
   z-index: 1;
   left: 0;
   right: 0;
@@ -347,6 +408,11 @@ body._locked {
 
 .menu__item._active:after {
   opacity: 1;
+}
+
+.menu__link {
+  display: inline-block;
+  padding: 20px 0;
 }
 
 .settings {
@@ -1603,84 +1669,6 @@ body._locked {
 
 .item-dashboard__contacts::-webkit-scrollbar-thumb:hover {
   background: var(--secondary-hover);
-}
-
-.contact {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 8px 16px;
-  border: 1px solid #dfe3e9;
-}
-
-.contact__info {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
-.contact__name {
-  margin-bottom: 3px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.contact__desc {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 8px;
-}
-
-.contact__desc a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  color: #7f8fa4;
-}
-
-.contact__desc a:before {
-  content: "";
-  display: block;
-  width: 12px;
-  height: 12px;
-}
-
-.contact__phone:before {
-  background: url("../img/icons/phone.svg") center center no-repeat;
-}
-
-.contact__mail:before {
-  background: url("../img/icons/mail.svg") center center no-repeat;
-}
-
-.contact__img {
-  width: 32px;
-  height: 32px;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(-251.25%, #3a9eff), color-stop(50%, #ecf6ff));
-  background: -o-linear-gradient(bottom, #3a9eff -251.25%, #ecf6ff 50%);
-  background: linear-gradient(0deg, #3a9eff -251.25%, #ecf6ff 50%);
-  border-radius: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .tasks-chart canvas {

@@ -12112,7 +12112,7 @@
     const auto = Chart;
     const headerMenu = document.querySelector(".menu");
     headerMenu.addEventListener("click", (e => {
-        if (e.target.closest(".menu__item")) headerMenu.querySelectorAll("li").forEach((item => {
+        if (e.target.closest(".menu__item")) headerMenu.querySelectorAll(".menu__item").forEach((item => {
             item.classList.remove("_active");
             e.target.closest(".menu__item").classList.add("_active");
         }));
@@ -12122,7 +12122,7 @@
         btn.addEventListener("click", (event => {
             let openId = event.target.closest(".settings__btn").dataset.open;
             btn.classList.toggle("_active");
-            document.querySelector(`[data-settings="${openId}"]`).classList.toggle("_active");
+            btn.parentElement.querySelector(`[data-settings="${openId}"]`).classList.toggle("_active");
         }));
     }));
     const dates = document.querySelectorAll(".date");

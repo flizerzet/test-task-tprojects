@@ -2,7 +2,7 @@
 
 .header {
 	background-color: #273142;
-	padding: 8px 0;
+	// padding: 8px 0;
 	position: relative;
 	// .header__container
 	&__container {
@@ -92,7 +92,7 @@
 		&::after {
 			content: "";
 			position: absolute;
-			bottom: -20px;
+			bottom: 0;
 			z-index: 1;
 			left: 0;
 			right: 0;
@@ -117,6 +117,8 @@
 	}
 	// .menu__link
 	&__link {
+		display: inline-block;
+		padding: 20px 0;
 	}
 }
 
